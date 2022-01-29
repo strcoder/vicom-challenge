@@ -1,25 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './styles.scss';
 
 type RecipeProps = {
   link: string;
+  image: string;
   title: string;
   recipe: string;
   ingredients: string;
 }
 
-const Recipe = ({ title, recipe, ingredients, link = '/' }: RecipeProps) => {
+const Recipe = ({ image, title, recipe, ingredients, link = '/' }: RecipeProps) => {
   return (
     <section className='Recipe'>
       <figure className='Recipe__image'>
-        <img src='/assets/recipe.img' alt='Camarones al mojo de ajo' />
+        <img src={image} alt={recipe} />
       </figure>
       <div className='Recipe__info'>
-        <h3>Recetas EKCO</h3>
-        <p><strong>Camarones al mojo de ajo</strong></p>
-        <small>Ingredientes</small>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <Link to='/recipe/camarones-al-mojo-de-ajo'>
+        <h3>{title}</h3>
+        <p><strong>{recipe}</strong></p>
+        <small>Ingredientes:</small>
+        <small>{ingredients}</small>
+        <Link to={link} className='btn-underline'>
           Ver todo
         </Link>
       </div>

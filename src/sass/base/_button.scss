@@ -33,6 +33,19 @@ a,
   @include buttonLink($black);
 }
 
+.btn-underline {
+  text-transform: uppercase;
+  &::after {
+    top: 15px;
+    left: -68%;
+    content: '';
+    width: 29px;
+    height: 2px;
+    position: relative;
+    background-color: $primary-color;
+  }
+}
+
 .btn-outline {
   @include buttonOutline();
 }
