@@ -1,0 +1,48 @@
+@import '../../sass/base/variables';
+
+.Banner__info {
+  gap: 8px;
+  padding: 50px;
+  grid-row-end: 1;
+  grid-row-start: 1;
+  color: $soft-color;
+  grid-column-end: 1;
+  grid-column-start: 1;
+  align-content: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: rgba(#1c60b7, 0.8);
+  & p:nth-child(1) {
+    font-size: $font-size-xxl;
+  }
+  & p:nth-child(5) {
+    font-size: $font-size-xxl;
+  }
+}
+
+.Banner__image {
+  z-index: -1;
+  grid-row-end: 1;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  max-height: 360px;
+  & img {
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Banner {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .Banner__info {
+    background-image: radial-gradient(circle, #4fc2fd, #3aaef1, #269be5, #1887d8, #1473c9);
+  }
+
+  .Banner__image {
+    grid-column-end: 2;
+    grid-column-start: 2;
+  }
+}
