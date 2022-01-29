@@ -1,0 +1,72 @@
+@import '../../sass/base/variables';
+
+.Header {
+  // box-shadow: $box-shadow-sm;
+  border-bottom: $border-width solid $border-color;
+}
+
+.Header__ad {
+  padding: 10px;
+  color: $soft-color;
+  justify-content: center;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  background-color: $primary-color;
+}
+
+.Header__container--logo {
+  max-width: 200px;
+}
+
+.Header__container {
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Header__container--logo {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.Header__container--nav {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  grid-row-start: 2;
+  white-space: nowrap;
+  grid-column-start: 1;
+  align-content: center;
+  grid-column-end: span 2;
+}
+
+.Header__container--actions {
+  display: flex;
+  grid-row-start: 1;
+  align-items: center;
+  grid-column-start: 2;
+  justify-self: flex-end;
+}
+
+@media screen and (min-width: 863px) {
+  .Header__container--nav {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Header__container {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .Header__container--nav {
+    grid-row-start: 1;
+    grid-column-end: span 1;
+    grid-column-start: 2;
+  }
+
+  .Header__container--actions {
+    grid-column-start: 3;
+  }
+}
