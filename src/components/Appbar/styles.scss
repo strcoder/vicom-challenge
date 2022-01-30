@@ -1,7 +1,6 @@
 @import '../../sass/base/variables';
 
 .Header {
-  // box-shadow: $box-shadow-sm;
   border-bottom: $border-width solid $border-color;
 }
 
@@ -52,6 +51,12 @@
 @media screen and (min-width: 863px) {
   .Header__container--nav {
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Header__container {
+    padding: 0 10%;
   }
 }
 
