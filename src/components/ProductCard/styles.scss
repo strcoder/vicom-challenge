@@ -1,0 +1,37 @@
+@import '../../sass/base/variables';
+
+.ProductCard {
+  gap: 15px;
+  width: 300px;
+  white-space: normal;
+}
+
+.ProductCard__image {
+  width: 300px;
+  height: 290px;
+  border-radius: 2px;
+  justify-content: center;
+  background-color: #eeeeee;
+  & img {
+    object-fit: cover;
+  }
+  & span {
+    color: #AAAAAA;
+    font-size: 5rem;
+    align-self: center;
+  }
+}
+
+.ProductCard__info {
+  gap: 8px;
+  color: #666666;
+  & p strong {
+    font-size: $font-size-xxl;
+  }
+  & p {
+    font-size: $font-size-xs;
+  }
+  & a {
+    margin-top: 4px;
+  }
+}

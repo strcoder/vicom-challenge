@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsImage } from 'react-icons/bs';
+import './styles.scss';
 
 type ProductCardProps = {
   name: string;
@@ -17,14 +19,21 @@ const ProductCard = ({
   return (
     <div className='ProductCard'>
       <figure className='ProductCard__image'>
-        <img src={image} alt={name} />
+        {image && (
+          <img src={image} alt={name} />
+        )}
+        {!image && (
+          <span><BsImage /></span>
+        )}
       </figure>
       <div className='ProductCard__info'>
         <p>
           <strong>{name}</strong>
         </p>
         <p>{description}</p>
-        <Link to={link}>Ver todo</Link>
+        <Link to={link} className='btn-underline'>
+          Ver todo
+        </Link>
       </div>
     </div>
   );

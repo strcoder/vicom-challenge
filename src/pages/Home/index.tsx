@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../components/Banner';
+import BestSellers from '../../components/BestSellers';
 import Recipe from '../../components/Recipe';
 import './styles.scss';
 
@@ -17,6 +18,7 @@ const Home = () => {
         recipe='Camarones al mojo de ajo'
         link='/recipe/camarones-al-mojo-de-ajo'
       />
+      <BestSellers />
     </>
   );
 };

@@ -33,6 +33,10 @@ a,
   @include buttonLink($black);
 }
 
+.btn-link-primary {
+  @include buttonLink($primary-color);
+}
+
 .btn-underline {
   text-transform: uppercase;
   &::after {
