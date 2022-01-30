@@ -1,23 +1,29 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './styles.scss';
 
 type CharacterProps = {
-  name: string;
-  image: string;
-  gender: string;
-  episodes: string[];
+  name?: string;
+  image?: string;
+  gender?: string;
+  episode?: string[];
 };
 
-const Character = ({ image, name, gender, episodes }: CharacterProps) => {
+const Character = ({ image, name, gender, episode }: CharacterProps) => {
+  const [episodes, setEpisodes] = useState([]);
 
-  const formatEpisode = async ({ url }: { url: string }) => {
-    const { data } = await axios({
-      url,
-      method: 'GET',
+  useEffect(() => {
+    episode?.splice(0, 5)?.map((item) => {
+      axios({
+        url: item,
+        method: 'GET',
+      }).then(({ data }) => {
+        episodes?.push(data);
+        setEpisodes([...episodes]);
+      });
+      return item;
     });
-
-    return data ? data.episode : '';
-  };
+  }, [episode]);
 
   return (
     <div className='Character'>
@@ -35,8 +41,8 @@ const Character = ({ image, name, gender, episodes }: CharacterProps) => {
         </div>
         <div>
           <p><strong>Primeros 5 episodios:</strong></p>
-          {episodes.splice(0, 5).map((episode) => (
-            <p>{`Episodio: ${formatEpisode({ url: episode })}`}</p>
+          {episodes?.map((episode) => (
+            <p>{`Episodio: ${episode.episode}`}</p>
           ))}
         </div>
       </div>

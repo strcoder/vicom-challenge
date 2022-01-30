@@ -1,0 +1,26 @@
+@import '../../sass/base/variables';
+
+.Accordion {
+  border-bottom: $border-width solid #999999;
+}
+
+.Accordion__header {
+  width: 100%;
+  border-radius: 0;
+  background: none;
+  font-size: $font-size-xl;
+  justify-content: space-between;
+}
+
+.Accordion__content {
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+  color: #666666;
+  transition: $transition-base;
+  &.true {
+    opacity: 01;
+    height: auto;
+    padding: 10px 14px;
+  }
+}

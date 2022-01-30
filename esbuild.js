@@ -10,6 +10,5 @@ esbuild.build({
   entryPoints: ['src/index.tsx'],
   define: {
     'process.env.NODE_ENV': '"production"',
-    'process.env.API_URL': '"https://rickandmortyapi.com/api/character/2"',
   },
 }).catch((e) => console.error(e.message));

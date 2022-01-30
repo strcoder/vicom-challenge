@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiPlus, BiMinus } from 'react-icons/bi';
+import './styles.scss';
 
 type AccordionProps = {
   title: string;
@@ -10,14 +11,14 @@ const Accordion = ({ title, children }: AccordionProps) => {
   const [active, setActive] = useState(false);
   return (
     <div className='Accordion'>
-      <button type='button' onClick={() => setActive(!active)}>
+      <button className='Accordion__header' type='button' onClick={() => setActive(!active)}>
         <p>{title}</p>
         <span>
           {!active && <BiPlus />}
           {active && <BiMinus />}
         </span>
       </button>
-      <div>
+      <div className={`Accordion__content ${active}`}>
         {children}
       </div>
     </div>

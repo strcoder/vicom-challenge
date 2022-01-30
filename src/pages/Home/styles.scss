@@ -5,8 +5,27 @@
   justify-self: center;
 }
 
+.Home__footer {
+  padding: 25px;
+  align-items: flex-start;
+}
+
 @media screen and (min-width: 400px) {
   .Home__logo {
     width: 130px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Home__footer {
+    gap: 100px;
+    padding: 25px 10%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Home__footer {
+    padding: 100px 15%;
   }
 }
